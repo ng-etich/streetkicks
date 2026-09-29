@@ -1,0 +1,335 @@
+<%- include("partials/head") %>
+
+<%- include("partials/navbar") %>
+
+<%- include("partials/mobile-menu") %>
+
+
+<main>
+
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
+
+    <section class="hero-section">
+
+        <div class="container hero-container">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    STREETKICKS / 2026 COLLECTION
+                </span>
+
+                <h1 data-i18n="heroTitle">
+                    STEP INTO<br>
+                    YOUR STYLE.
+                </h1>
+
+                <p data-i18n="heroDescription">
+                    Discover the latest sneakers made for the
+                    streets. Fresh kicks. Bold style. Your move.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="/shop"
+                        class="btn btn-primary"
+                        data-i18n="shopNow"
+                    >
+                        SHOP NOW
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a
+                        href="/shop?category=new"
+                        class="btn btn-outline"
+                        data-i18n="explore"
+                    >
+                        EXPLORE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="hero-image-background"></div>
+
+                <img
+                    src="/images/hero/hero-1.jpg"
+                    alt="Latest STREETKICKS sneaker"
+                >
+
+                <div class="hero-floating-card">
+
+                    <span>NEW DROP</span>
+
+                    <strong>
+                        STREET<br>
+                        READY.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CATEGORIES
+    ========================================== -->
+
+    <section class="categories-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2 data-i18n="shopByCategory">
+                        Shop By Category
+                    </h2>
+
+                </div>
+
+                <a href="/shop" class="view-all">
+                    View All
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <a
+                    href="/shop?category=men"
+                    class="category-card"
+                >
+
+                    <img
+                        src="/images/categories/men.jpg"
+                        alt="Men's sneakers"
+                    >
+
+                    <div class="category-overlay">
+
+                        <span>01</span>
+
+                        <h3>MEN</h3>
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="/shop?category=women"
+                    class="category-card"
+                >
+
+                    <img
+                        src="/images/categories/women.jpg"
+                        alt="Women's sneakers"
+                    >
+
+                    <div class="category-overlay">
+
+                        <span>02</span>
+
+                        <h3>WOMEN</h3>
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="/shop?category=kids"
+                    class="category-card"
+                >
+
+                    <img
+                        src="/images/categories/kids.jpg"
+                        alt="Kids sneakers"
+                    >
+
+                    <div class="category-overlay">
+
+                        <span>03</span>
+
+                        <h3>KIDS</h3>
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="/shop?category=limited"
+                    class="category-card"
+                >
+
+                    <img
+                        src="/images/categories/limited.jpg"
+                        alt="Limited edition sneakers"
+                    >
+
+                    <div class="category-overlay">
+
+                        <span>04</span>
+
+                        <h3>LIMITED</h3>
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TRENDING PRODUCTS
+    ========================================== -->
+
+    <section class="products-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        WHAT'S HOT
+                    </span>
+
+                    <h2 data-i18n="trending">
+                        Trending Sneakers
+                    </h2>
+
+                </div>
+
+                <a href="/shop" class="view-all">
+                    View All
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="product-grid">
+
+                <% if (typeof products !== "undefined" && products.length) { %>
+
+                    <% products.slice(0, 4).forEach(product => { %>
+
+                        <%- include("partials/product-card", { product: product }) %>
+
+                    <% }) %>
+
+                <% } else { %>
+
+                    <div class="empty-products">
+
+                        <p>
+                            Products will appear here.
+                        </p>
+
+                    </div>
+
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROMO BANNER
+    ========================================== -->
+
+    <section class="promo-section">
+
+        <div class="container">
+
+            <div class="promo-banner">
+
+                <div class="promo-content">
+
+                    <span>
+                        STREETKICKS EXCLUSIVE
+                    </span>
+
+                    <h2>
+                        FRESH KICKS.<br>
+                        FRESH ENERGY.
+                    </h2>
+
+                    <a
+                        href="/shop?category=new"
+                        class="btn btn-light"
+                    >
+                        SHOP NEW ARRIVALS
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NEWSLETTER
+    ========================================== -->
+
+    <%- include("partials/newsletter") %>
+
+</main>
+
+
+<%- include("partials/footer") %>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/language.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/wishlist.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

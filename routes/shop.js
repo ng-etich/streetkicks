@@ -1,0 +1,149 @@
+const express = require("express");
+const router = express.Router();
+
+const products = require("../data/products");
+
+router.get("/", (req, res) => {
+
+    let filteredProducts = [...products];
+
+    const {
+        search,
+        category,
+        sort
+    } = req.query;
+
+
+    // =========================
+    // SEARCH
+    // =========================
+
+    if (search) {
+
+        const searchTerm =
+            search.toLowerCase().trim();
+
+        filteredProducts =
+            filteredProducts.filter(product =>
+
+                product.name
+                    .toLowerCase()
+                    .includes(searchTerm)
+
+                ||
+
+                product.category
+                    .toLowerCase()
+                    .includes(searchTerm)
+
+            );
+
+    }
+
+
+    // =========================
+    // CATEGORY FILTER
+    // =========================
+
+    if (category) {
+
+        const selectedCategory =
+            category.toLowerCase().trim();
+
+
+        // All products
+
+        if (selectedCategory === "all") {
+
+            filteredProducts = [...filteredProducts];
+
+        }
+
+
+        // Limited products
+
+        else if (selectedCategory === "limited") {
+
+            filteredProducts =
+                filteredProducts.filter(product =>
+
+                    product.badge &&
+                    product.badge.toLowerCase() === "limited"
+
+                );
+
+        }
+
+
+        // Normal categories
+
+        else {
+
+            filteredProducts =
+                filteredProducts.filter(product =>
+
+                    product.category &&
+                    product.category.toLowerCase() ===
+                    selectedCategory
+
+                );
+
+        }
+
+    }
+
+
+    // =========================
+    // SORTING
+    // =========================
+
+    if (sort === "price-low") {
+
+        filteredProducts.sort(
+            (a, b) => a.price - b.price
+        );
+
+    }
+
+    else if (sort === "price-high") {
+
+        filteredProducts.sort(
+            (a, b) => b.price - a.price
+        );
+
+    }
+
+    else if (sort === "name") {
+
+        filteredProducts.sort(
+            (a, b) =>
+                a.name.localeCompare(b.name)
+        );
+
+    }
+
+
+    // =========================
+    // RENDER SHOP
+    // =========================
+
+    res.render("shop", {
+
+        title: "Shop | STREETKICKS",
+
+        products: filteredProducts,
+
+        search: search || "",
+
+        category: category
+            ? category.toLowerCase()
+            : "all",
+
+        sort: sort || ""
+
+    });
+
+});
+
+
+module.exports = router;

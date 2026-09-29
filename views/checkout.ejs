@@ -1,0 +1,742 @@
+<%- include("partials/head") %>
+
+<%- include("partials/navbar") %>
+
+<%- include("partials/mobile-menu") %>
+
+
+<main class="checkout-page">
+
+
+    <!-- =========================================
+         CHECKOUT HEADER
+    ========================================== -->
+
+    <section class="checkout-header">
+
+        <div class="container">
+
+            <span class="section-label">
+                STREETKICKS
+            </span>
+
+            <h1>
+                CHECKOUT
+            </h1>
+
+            <p>
+                Complete your details and place
+                your sneaker order.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CHECKOUT CONTENT
+    ========================================== -->
+
+    <section class="checkout-section">
+
+        <div class="container checkout-layout">
+
+
+            <!-- =================================
+                 CHECKOUT FORM
+            ================================== -->
+
+            <div class="checkout-form-container">
+
+                <form
+                    id="checkoutForm"
+                    novalidate
+                >
+
+
+                    <!-- =================================
+                         CONTACT INFORMATION
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-heading">
+
+                            <span class="checkout-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <span class="section-label">
+                                    CUSTOMER
+                                </span>
+
+                                <h2>
+                                    Contact Information
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="checkout-fields">
+
+                            <div class="form-field full-width">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                                <small class="field-error">
+                                    Please enter your full name.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small class="field-error">
+                                    Please enter a valid email.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="07XX XXX XXX"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                                <small class="field-error">
+                                    Please enter your phone number.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         DELIVERY INFORMATION
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-heading">
+
+                            <span class="checkout-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <span class="section-label">
+                                    DELIVERY
+                                </span>
+
+                                <h2>
+                                    Delivery Information
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="checkout-fields">
+
+
+                            <div class="form-field">
+
+                                <label for="county">
+                                    County
+                                </label>
+
+                                <select
+                                    id="county"
+                                    name="county"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select County
+                                    </option>
+
+                                    <option value="Baringo">
+                                        Baringo
+                                    </option>
+
+                                    <option value="Bomet">
+                                        Bomet
+                                    </option>
+
+                                    <option value="Bungoma">
+                                        Bungoma
+                                    </option>
+
+                                    <option value="Busia">
+                                        Busia
+                                    </option>
+
+                                    <option value="Elgeyo-Marakwet">
+                                        Elgeyo-Marakwet
+                                    </option>
+
+                                    <option value="Embu">
+                                        Embu
+                                    </option>
+
+                                    <option value="Homa Bay">
+                                        Homa Bay
+                                    </option>
+
+                                    <option value="Isiolo">
+                                        Isiolo
+                                    </option>
+
+                                    <option value="Kajiado">
+                                        Kajiado
+                                    </option>
+
+                                    <option value="Kakamega">
+                                        Kakamega
+                                    </option>
+
+                                    <option value="Kericho">
+                                        Kericho
+                                    </option>
+
+                                    <option value="Kiambu">
+                                        Kiambu
+                                    </option>
+
+                                    <option value="Kilifi">
+                                        Kilifi
+                                    </option>
+
+                                    <option value="Kirinyaga">
+                                        Kirinyaga
+                                    </option>
+
+                                    <option value="Kisii">
+                                        Kisii
+                                    </option>
+
+                                    <option value="Kisumu">
+                                        Kisumu
+                                    </option>
+
+                                    <option value="Kitui">
+                                        Kitui
+                                    </option>
+
+                                    <option value="Kwale">
+                                        Kwale
+                                    </option>
+
+                                    <option value="Laikipia">
+                                        Laikipia
+                                    </option>
+
+                                    <option value="Lamu">
+                                        Lamu
+                                    </option>
+
+                                    <option value="Machakos">
+                                        Machakos
+                                    </option>
+
+                                    <option value="Makueni">
+                                        Makueni
+                                    </option>
+
+                                    <option value="Mandera">
+                                        Mandera
+                                    </option>
+
+                                    <option value="Marsabit">
+                                        Marsabit
+                                    </option>
+
+                                    <option value="Meru">
+                                        Meru
+                                    </option>
+
+                                    <option value="Migori">
+                                        Migori
+                                    </option>
+
+                                    <option value="Mombasa">
+                                        Mombasa
+                                    </option>
+
+                                    <option value="Murang'a">
+                                        Murang'a
+                                    </option>
+
+                                    <option value="Nairobi">
+                                        Nairobi
+                                    </option>
+
+                                    <option value="Nakuru">
+                                        Nakuru
+                                    </option>
+
+                                    <option value="Nandi">
+                                        Nandi
+                                    </option>
+
+                                    <option value="Narok">
+                                        Narok
+                                    </option>
+
+                                    <option value="Nyamira">
+                                        Nyamira
+                                    </option>
+
+                                    <option value="Nyandarua">
+                                        Nyandarua
+                                    </option>
+
+                                    <option value="Nyeri">
+                                        Nyeri
+                                    </option>
+
+                                    <option value="Samburu">
+                                        Samburu
+                                    </option>
+
+                                    <option value="Siaya">
+                                        Siaya
+                                    </option>
+
+                                    <option value="Taita-Taveta">
+                                        Taita-Taveta
+                                    </option>
+
+                                    <option value="Tana River">
+                                        Tana River
+                                    </option>
+
+                                    <option value="Tharaka-Nithi">
+                                        Tharaka-Nithi
+                                    </option>
+
+                                    <option value="Trans Nzoia">
+                                        Trans Nzoia
+                                    </option>
+
+                                    <option value="Turkana">
+                                        Turkana
+                                    </option>
+
+                                    <option value="Uasin Gishu">
+                                        Uasin Gishu
+                                    </option>
+
+                                    <option value="Vihiga">
+                                        Vihiga
+                                    </option>
+
+                                    <option value="Wajir">
+                                        Wajir
+                                    </option>
+
+                                    <option value="West Pokot">
+                                        West Pokot
+                                    </option>
+
+                                </select>
+
+                                <small class="field-error">
+                                    Please select your county.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="town">
+                                    Town / City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="town"
+                                    name="town"
+                                    placeholder="e.g. Nairobi"
+                                    required
+                                >
+
+                                <small class="field-error">
+                                    Please enter your town.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field full-width">
+
+                                <label for="address">
+                                    Delivery Address
+                                </label>
+
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    rows="3"
+                                    placeholder="Building, street, estate or delivery location"
+                                    required
+                                ></textarea>
+
+                                <small class="field-error">
+                                    Please enter your delivery address.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-field full-width">
+
+                                <label for="instructions">
+                                    Delivery Instructions
+                                    <span>
+                                        Optional
+                                    </span>
+                                </label>
+
+                                <textarea
+                                    id="instructions"
+                                    name="instructions"
+                                    rows="3"
+                                    placeholder="Any additional delivery instructions?"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PAYMENT
+                    ================================== -->
+
+                    <div class="checkout-block">
+
+                        <div class="checkout-block-heading">
+
+                            <span class="checkout-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <span class="section-label">
+                                    PAYMENT
+                                </span>
+
+                                <h2>
+                                    Payment Method
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-methods">
+
+
+                            <!-- M-PESA -->
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="mpesa"
+                                    checked
+                                >
+
+                                <span class="payment-radio"></span>
+
+                                <span class="payment-content">
+
+                                    <strong>
+                                        M-Pesa
+                                    </strong>
+
+                                    <small>
+                                        Pay using M-Pesa
+                                    </small>
+
+                                </span>
+
+                                <span class="payment-icon">
+                                    M-PESA
+                                </span>
+
+                            </label>
+
+
+                            <!-- CARD -->
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="card"
+                                >
+
+                                <span class="payment-radio"></span>
+
+                                <span class="payment-content">
+
+                                    <strong>
+                                        Card
+                                    </strong>
+
+                                    <small>
+                                        Visa or Mastercard
+                                    </small>
+
+                                </span>
+
+                                <span class="payment-icon">
+                                    CARD
+                                </span>
+
+                            </label>
+
+
+                            <!-- CASH -->
+
+                            <label class="payment-option">
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="cash"
+                                >
+
+                                <span class="payment-radio"></span>
+
+                                <span class="payment-content">
+
+                                    <strong>
+                                        Cash on Delivery
+                                    </strong>
+
+                                    <small>
+                                        Pay when your order arrives
+                                    </small>
+
+                                </span>
+
+                                <span class="payment-icon">
+                                    COD
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PLACE ORDER
+                    ================================== -->
+
+                    <div class="checkout-submit">
+
+                        <label class="terms-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            <span>
+                                I agree to the StreetKicks
+                                terms and conditions.
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="submit"
+                            class="place-order-button"
+                        >
+
+                            PLACE ORDER
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================
+                 ORDER SUMMARY
+            ================================== -->
+
+            <aside class="checkout-summary">
+
+                <div class="checkout-summary-header">
+
+                    <span class="section-label">
+                        YOUR ORDER
+                    </span>
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+                </div>
+
+
+                <!-- Cart items inserted by JS -->
+
+                <div
+                    class="checkout-items"
+                    id="checkoutItems"
+                ></div>
+
+
+                <div class="checkout-summary-lines">
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="checkoutSubtotal">
+                            KES 0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="checkoutDelivery">
+                            KES 0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        KES 0
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="/cart"
+                    class="back-to-cart"
+                >
+
+                    <i data-lucide="arrow-left"></i>
+
+                    Edit Cart
+
+                </a>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<%- include("partials/newsletter") %>
+
+<%- include("partials/footer") %>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/language.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/wishlist.js"></script>
+<script src="/js/products.js"></script>
+<script src="/js/checkout.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,538 @@
+<%- include("partials/head") %>
+
+<%- include("partials/navbar") %>
+
+<%- include("partials/mobile-menu") %>
+
+
+<main class="product-page">
+
+
+    <!-- =========================================
+         PRODUCT DETAILS
+    ========================================== -->
+
+    <section class="product-details-section">
+
+        <div class="container product-details-layout">
+
+
+            <!-- =====================================
+                 PRODUCT IMAGE
+            ====================================== -->
+
+            <div class="product-gallery">
+
+                <div class="product-main-image">
+
+                    <% if (product.badge) { %>
+
+                        <span class="product-detail-badge">
+                            <%= product.badge %>
+                        </span>
+
+                    <% } %>
+
+
+                    <button
+                        class="product-gallery-wishlist wishlist-button"
+                        data-product-id="<%= product.id %>"
+                    >
+
+                        <i data-lucide="heart"></i>
+
+                    </button>
+
+
+                    <img
+                        src="<%= product.image %>"
+                        alt="<%= product.name %>"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 PRODUCT INFORMATION
+            ====================================== -->
+
+            <div class="product-details-info">
+
+
+                <span class="product-detail-category">
+
+                    <%= product.category %>
+
+                </span>
+
+
+                <h1>
+
+                    <%= product.name %>
+
+                </h1>
+
+
+                <!-- Rating -->
+
+                <div class="product-detail-rating">
+
+                    <span class="detail-stars">
+                        ★★★★★
+                    </span>
+
+                    <span>
+                        <%= product.reviews || 0 %>
+                        Reviews
+                    </span>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="product-detail-price">
+
+                    <% if (product.oldPrice) { %>
+
+                        <span class="detail-old-price">
+
+                            KES
+                            <%= product.oldPrice.toLocaleString() %>
+
+                        </span>
+
+                    <% } %>
+
+
+                    <span class="detail-current-price">
+
+                        KES
+                        <%= product.price.toLocaleString() %>
+
+                    </span>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="product-description">
+
+                    <p>
+
+                        Step up your streetwear game with the
+                        <strong>
+                            <%= product.name %>
+                        </strong>.
+                        Designed for everyday movement,
+                        comfort and effortless style.
+
+                    </p>
+
+                    <p>
+
+                        Whether you're hitting the streets,
+                        heading out with friends or adding
+                        to your sneaker collection, these
+                        kicks are ready for the move.
+
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     SIZE
+                ================================== -->
+
+                <div class="product-option">
+
+                    <div class="option-heading">
+
+                        <span>
+                            SELECT SIZE
+                        </span>
+
+                        <a href="#">
+                            Size Guide
+                        </a>
+
+                    </div>
+
+
+                    <div class="size-options">
+
+                        <% product.sizes.forEach(size => { %>
+
+                            <button
+                                type="button"
+                                class="size-button"
+                                data-size="<%= size %>"
+                            >
+                                <%= size %>
+                            </button>
+
+                        <% }) %>
+
+                    </div>
+
+                    <p
+                        class="size-error"
+                        id="sizeError"
+                    >
+                        Please select a size.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     QUANTITY
+                ================================== -->
+
+                <div class="product-option">
+
+                    <span class="option-title">
+                        QUANTITY
+                    </span>
+
+
+                    <div class="quantity-selector">
+
+                        <button
+                            type="button"
+                            id="decreaseQuantity"
+                        >
+                            −
+                        </button>
+
+
+                        <span id="quantity">
+                            1
+                        </span>
+
+
+                        <button
+                            type="button"
+                            id="increaseQuantity"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     ACTIONS
+                ================================== -->
+
+                <div class="product-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary add-to-cart-detail"
+                        id="addToCart"
+                    >
+
+                        <i data-lucide="shopping-bag"></i>
+
+                        ADD TO CART
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="buy-now-button"
+                        id="buyNow"
+                    >
+
+                        BUY NOW
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================
+                     PRODUCT INFO
+                ================================== -->
+
+                <div class="product-information">
+
+                    <div class="information-row">
+
+                        <span>
+                            <i data-lucide="truck"></i>
+                            Delivery
+                        </span>
+
+                        <strong>
+                            Available across Kenya
+                        </strong>
+
+                    </div>
+
+
+                    <div class="information-row">
+
+                        <span>
+                            <i data-lucide="rotate-ccw"></i>
+                            Returns
+                        </span>
+
+                        <strong>
+                            Easy returns within 7 days
+                        </strong>
+
+                    </div>
+
+
+                    <div class="information-row">
+
+                        <span>
+                            <i data-lucide="shield-check"></i>
+                            Authenticity
+                        </span>
+
+                        <strong>
+                            100% Authentic Products
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         RELATED PRODUCTS
+    ========================================== -->
+
+    <% if (relatedProducts.length > 0) { %>
+
+        <section class="related-products-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            YOU MAY ALSO LIKE
+                        </span>
+
+                        <h2>
+                            Related Sneakers
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product-grid">
+
+                    <% relatedProducts.forEach(product => { %>
+
+                        <%- include(
+                            "partials/product-card",
+                            { product: product }
+                        ) %>
+
+                    <% }) %>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    <% } %>
+
+
+</main>
+
+
+<%- include("partials/newsletter") %>
+
+<%- include("partials/footer") %>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/language.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/wishlist.js"></script>
+<script src="/js/products.js"></script>
+
+
+<script>
+
+    const product = <%- JSON.stringify(product) %>;
+
+
+    let selectedSize = null;
+
+    let selectedQuantity = 1;
+
+
+    // ==========================================
+    // SIZE SELECTION
+    // ==========================================
+
+    const sizeButtons =
+        document.querySelectorAll(".size-button");
+
+
+    sizeButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            sizeButtons.forEach(btn =>
+                btn.classList.remove("selected")
+            );
+
+
+            button.classList.add("selected");
+
+
+            selectedSize =
+                Number(button.dataset.size);
+
+
+            document
+                .getElementById("sizeError")
+                .classList.remove("show");
+
+        });
+
+    });
+
+
+    // ==========================================
+    // QUANTITY
+    // ==========================================
+
+    const quantityElement =
+        document.getElementById("quantity");
+
+
+    document
+        .getElementById("increaseQuantity")
+        .addEventListener("click", () => {
+
+            if (selectedQuantity < 10) {
+
+                selectedQuantity++;
+
+                quantityElement.textContent =
+                    selectedQuantity;
+
+            }
+
+        });
+
+
+    document
+        .getElementById("decreaseQuantity")
+        .addEventListener("click", () => {
+
+            if (selectedQuantity > 1) {
+
+                selectedQuantity--;
+
+                quantityElement.textContent =
+                    selectedQuantity;
+
+            }
+
+        });
+
+
+    // ==========================================
+    // ADD TO CART
+    // ==========================================
+
+    document
+        .getElementById("addToCart")
+        .addEventListener("click", () => {
+
+            if (!selectedSize) {
+
+                document
+                    .getElementById("sizeError")
+                    .classList.add("show");
+
+                return;
+
+            }
+
+
+            addToCart(
+                product,
+                selectedQuantity,
+                selectedSize
+            );
+
+
+            alert(
+                `${product.name} has been added to your cart.`
+            );
+
+        });
+
+
+    // ==========================================
+    // BUY NOW
+    // ==========================================
+
+    document
+        .getElementById("buyNow")
+        .addEventListener("click", () => {
+
+            if (!selectedSize) {
+
+                document
+                    .getElementById("sizeError")
+                    .classList.add("show");
+
+                return;
+
+            }
+
+
+            addToCart(
+                product,
+                selectedQuantity,
+                selectedSize
+            );
+
+
+            window.location.href =
+                "/cart";
+
+        });
+
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+</html>

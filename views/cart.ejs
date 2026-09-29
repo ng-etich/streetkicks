@@ -1,0 +1,262 @@
+<%- include("partials/head") %>
+
+<%- include("partials/navbar") %>
+
+<%- include("partials/mobile-menu") %>
+
+
+<main class="cart-page">
+
+
+    <!-- =========================================
+         CART HEADER
+    ========================================== -->
+
+    <section class="cart-header">
+
+        <div class="container">
+
+            <span class="section-label">
+                STREETKICKS
+            </span>
+
+            <h1>
+                YOUR CART
+            </h1>
+
+            <p>
+                Review your sneakers before
+                heading to checkout.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EMPTY CART
+    ========================================== -->
+
+    <section
+        class="empty-cart"
+        id="emptyCart"
+    >
+
+        <div class="empty-cart-icon">
+
+            <i data-lucide="shopping-bag"></i>
+
+        </div>
+
+        <h2>
+            Your cart is empty
+        </h2>
+
+        <p>
+            Looks like you haven't added
+            any sneakers yet.
+        </p>
+
+        <a
+            href="/shop"
+            class="btn btn-primary"
+        >
+            SHOP SNEAKERS
+        </a>
+
+    </section>
+
+
+    <!-- =========================================
+         CART CONTENT
+    ========================================== -->
+
+    <section
+        class="cart-section"
+        id="cartContent"
+    >
+
+        <div class="container cart-layout">
+
+
+            <!-- =================================
+                 CART ITEMS
+            ================================== -->
+
+            <div class="cart-products">
+
+
+                <!-- TABLE HEADER -->
+
+                <div class="cart-table-header">
+
+                    <span>
+                        PRODUCT
+                    </span>
+
+                    <span>
+                        PRICE
+                    </span>
+
+                    <span>
+                        QUANTITY
+                    </span>
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                </div>
+
+
+                <!-- ITEMS -->
+
+                <div id="cartItems"></div>
+
+
+                <!-- CONTINUE SHOPPING -->
+
+                <div class="cart-actions">
+
+                    <a
+                        href="/shop"
+                        class="continue-shopping"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Continue Shopping
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="clear-cart-button"
+                        onclick="clearCart()"
+                    >
+                        Clear Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 ORDER SUMMARY
+            ================================== -->
+
+            <aside class="cart-summary">
+
+                <div class="cart-summary-header">
+
+                    <h2>
+                        ORDER SUMMARY
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cartSubtotal">
+                        KES 0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="cartDelivery">
+                        KES 0
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-note">
+
+                    Free delivery on orders
+                    above KES 10,000.
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="cartTotal">
+                        KES 0
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="/checkout"
+                    class="checkout-button"
+                >
+
+                    PROCEED TO CHECKOUT
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+
+                <div class="secure-checkout">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <span>
+                        Secure checkout
+                    </span>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<%- include("partials/newsletter") %>
+
+<%- include("partials/footer") %>
+
+
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/language.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/wishlist.js"></script>
+<script src="/js/products.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+</html>

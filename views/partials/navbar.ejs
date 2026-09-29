@@ -1,0 +1,160 @@
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <div class="container navbar-container">
+
+            <!-- Logo -->
+            <a href="/" class="logo">
+                STREET<span>KICKS</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+
+                <li>
+                    <a href="/" data-i18n="home">Home</a>
+                </li>
+
+                <li>
+                    <a href="/shop" data-i18n="shop">Shop</a>
+                </li>
+
+                <li>
+                    <a href="/shop?category=new" data-i18n="newArrivals">
+                        New Arrivals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/shop?category=collections" data-i18n="collections">
+                        Collections
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/shop?category=deals" data-i18n="deals">
+                        Deals
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Navigation -->
+            <div class="nav-actions">
+
+                <!-- Search -->
+                <button
+                    class="nav-icon"
+                    id="searchButton"
+                    aria-label="Search"
+                >
+                    <i data-lucide="search"></i>
+                </button>
+
+                <!-- Language -->
+                <div class="language-selector">
+
+                    <button
+                        class="language-button"
+                        id="languageButton"
+                    >
+                        <i data-lucide="globe"></i>
+                        <span id="currentLanguage">EN</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="language-menu" id="languageMenu">
+
+                        <button data-language="en">
+                            🇬🇧 English
+                        </button>
+
+                        <button data-language="sw">
+                            🇰🇪 Kiswahili
+                        </button>
+
+                        <button data-language="fr">
+                            🇫🇷 Français
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Theme -->
+                <button
+                    class="nav-icon theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <i data-lucide="moon"></i>
+                </button>
+
+                <!-- Wishlist -->
+                <a
+                    href="/wishlist"
+                    class="nav-icon"
+                    aria-label="Wishlist"
+                >
+                    <i data-lucide="heart"></i>
+                </a>
+
+                <!-- Cart -->
+                <a
+                    href="/cart"
+                    class="cart-button"
+                    aria-label="Shopping cart"
+                >
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <!-- Mobile menu -->
+                <button
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                >
+                    <i data-lucide="menu"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+
+        <div class="search-container">
+
+            <button
+                class="close-search"
+                id="closeSearch"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <form action="/shop" method="GET">
+
+                <input
+                    type="search"
+                    name="search"
+                    placeholder="Search sneakers..."
+                    data-i18n-placeholder="searchPlaceholder"
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    <i data-lucide="search"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</header>
