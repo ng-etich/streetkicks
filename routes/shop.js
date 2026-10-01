@@ -1,7 +1,9 @@
 const express = require("express");
+
 const router = express.Router();
 
 const products = require("../data/products");
+
 
 router.get("/", (req, res) => {
 
@@ -14,9 +16,9 @@ router.get("/", (req, res) => {
     } = req.query;
 
 
-    // =========================
+    // =========================================
     // SEARCH
-    // =========================
+    // =========================================
 
     if (search) {
 
@@ -37,13 +39,12 @@ router.get("/", (req, res) => {
                     .includes(searchTerm)
 
             );
-
     }
 
 
-    // =========================
-    // CATEGORY FILTER
-    // =========================
+    // =========================================
+    // CATEGORY / NAVIGATION FILTER
+    // =========================================
 
     if (category) {
 
@@ -51,17 +52,59 @@ router.get("/", (req, res) => {
             category.toLowerCase().trim();
 
 
-        // All products
-
+        // ALL PRODUCTS
         if (selectedCategory === "all") {
 
-            filteredProducts = [...filteredProducts];
+            filteredProducts = [...products];
 
         }
 
 
-        // Limited products
+        // NEW ARRIVALS
+        else if (selectedCategory === "new") {
 
+            filteredProducts =
+                filteredProducts.filter(product =>
+
+                    product.badge &&
+                    product.badge.toLowerCase() === "new"
+
+                );
+
+        }
+
+
+        // DEALS / SALE
+        else if (selectedCategory === "deals") {
+
+            filteredProducts =
+                filteredProducts.filter(product =>
+
+                    product.badge &&
+                    product.badge.toLowerCase() === "sale"
+
+                );
+
+        }
+
+
+        // COLLECTIONS
+        else if (selectedCategory === "collections") {
+
+            /*
+             * At the moment your products do not have
+             * a separate "collection" field.
+             *
+             * Therefore Collections displays all
+             * available sneakers.
+             */
+
+            filteredProducts = [...products];
+
+        }
+
+
+        // LIMITED EDITION
         else if (selectedCategory === "limited") {
 
             filteredProducts =
@@ -75,16 +118,16 @@ router.get("/", (req, res) => {
         }
 
 
-        // Normal categories
-
+        // NORMAL PRODUCT CATEGORIES
         else {
 
             filteredProducts =
                 filteredProducts.filter(product =>
 
                     product.category &&
-                    product.category.toLowerCase() ===
-                    selectedCategory
+
+                    product.category
+                        .toLowerCase() === selectedCategory
 
                 );
 
@@ -93,9 +136,9 @@ router.get("/", (req, res) => {
     }
 
 
-    // =========================
+    // =========================================
     // SORTING
-    // =========================
+    // =========================================
 
     if (sort === "price-low") {
 
@@ -123,9 +166,9 @@ router.get("/", (req, res) => {
     }
 
 
-    // =========================
+    // =========================================
     // RENDER SHOP
-    // =========================
+    // =========================================
 
     res.render("shop", {
 
