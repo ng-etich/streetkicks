@@ -1,9 +1,6 @@
 <%- include("partials/head") %>
-
 <%- include("partials/navbar") %>
-
 <%- include("partials/mobile-menu") %>
-
 
 <main>
 
@@ -55,23 +52,44 @@
             </div>
 
 
+            <!-- HERO IMAGE -->
+
             <div class="hero-image">
 
                 <div class="hero-image-background"></div>
 
                 <img
-                    src="/images/hero/hero-1.jpg"
+                    src="/images/sneakers/sneaker-1.jpg"
                     alt="Latest STREETKICKS sneaker"
+                    class="hero-main-sneaker"
                 >
+
+
+                <!-- NEW DROP CARD -->
 
                 <div class="hero-floating-card">
 
-                    <span>NEW DROP</span>
+                    <div class="floating-card-image">
 
-                    <strong>
-                        STREET<br>
-                        READY.
-                    </strong>
+                        <img
+                            src="/images/sneakers/sneaker-2.jpg"
+                            alt="StreetKicks new drop"
+                        >
+
+                    </div>
+
+                    <div class="floating-card-content">
+
+                        <span>
+                            NEW DROP
+                        </span>
+
+                        <strong>
+                            STREET<br>
+                            READY.
+                        </strong>
+
+                    </div>
 
                 </div>
 
@@ -80,6 +98,7 @@
         </div>
 
     </section>
+
 
 
     <!-- =========================================
@@ -104,7 +123,10 @@
 
                 </div>
 
-                <a href="/shop" class="view-all">
+                <a
+                    href="/shop"
+                    class="view-all"
+                >
                     View All
                     <i data-lucide="arrow-right"></i>
                 </a>
@@ -113,6 +135,7 @@
 
 
             <div class="category-grid">
+
 
                 <a
                     href="/shop?category=men"
@@ -128,13 +151,16 @@
 
                         <span>01</span>
 
-                        <h3>MEN</h3>
+                        <h3>
+                            MEN
+                        </h3>
 
                         <i data-lucide="arrow-up-right"></i>
 
                     </div>
 
                 </a>
+
 
 
                 <a
@@ -151,13 +177,16 @@
 
                         <span>02</span>
 
-                        <h3>WOMEN</h3>
+                        <h3>
+                            WOMEN
+                        </h3>
 
                         <i data-lucide="arrow-up-right"></i>
 
                     </div>
 
                 </a>
+
 
 
                 <a
@@ -174,13 +203,16 @@
 
                         <span>03</span>
 
-                        <h3>KIDS</h3>
+                        <h3>
+                            KIDS
+                        </h3>
 
                         <i data-lucide="arrow-up-right"></i>
 
                     </div>
 
                 </a>
+
 
 
                 <a
@@ -197,7 +229,9 @@
 
                         <span>04</span>
 
-                        <h3>LIMITED</h3>
+                        <h3>
+                            LIMITED
+                        </h3>
 
                         <i data-lucide="arrow-up-right"></i>
 
@@ -210,6 +244,7 @@
         </div>
 
     </section>
+
 
 
     <!-- =========================================
@@ -234,7 +269,10 @@
 
                 </div>
 
-                <a href="/shop" class="view-all">
+                <a
+                    href="/shop"
+                    class="view-all"
+                >
                     View All
                     <i data-lucide="arrow-right"></i>
                 </a>
@@ -248,7 +286,10 @@
 
                     <% products.slice(0, 4).forEach(product => { %>
 
-                        <%- include("partials/product-card", { product: product }) %>
+                        <%- include(
+                            "partials/product-card",
+                            { product: product }
+                        ) %>
 
                     <% }) %>
 
@@ -271,8 +312,9 @@
     </section>
 
 
+
     <!-- =========================================
-         PROMO BANNER
+         PROMO
     ========================================== -->
 
     <section class="promo-section">
@@ -309,9 +351,6 @@
     </section>
 
 
-    <!-- =========================================
-         NEWSLETTER
-    ========================================== -->
 
     <%- include("partials/newsletter") %>
 
@@ -327,9 +366,11 @@
 <script src="/js/cart.js"></script>
 <script src="/js/wishlist.js"></script>
 
+
 <script>
     lucide.createIcons();
 </script>
+
 
 </body>
 </html>
