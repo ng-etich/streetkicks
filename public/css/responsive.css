@@ -882,3 +882,310 @@
     }
 
 }
+/* ============================================================
+   STREETKICKS — FINAL RESPONSIVE PAGE STYLES
+   ============================================================ */
+
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+
+        gap: 18px;
+
+    }
+
+    .wishlist-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+    .site-footer .footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar-container {
+
+        min-height: 68px;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .mobile-menu-button {
+
+        display: inline-flex;
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .info-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .wishlist-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .account-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .account-sidebar {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .page-hero {
+
+        min-height: 280px;
+
+    }
+
+
+    .page-hero h1 {
+
+        font-size: 3.5rem;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .info-page {
+
+        padding: 55px 0;
+
+    }
+
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .wishlist-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+
+    }
+
+
+    .site-footer {
+
+        padding-top: 50px;
+
+    }
+
+
+    .site-footer .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 20px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .orders-table {
+
+        min-width: 700px;
+
+    }
+
+
+    .orders-table-wrapper {
+
+        overflow-x: auto;
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .navbar-container {
+
+        gap: 10px;
+
+    }
+
+
+    .logo {
+
+        font-size: 1.15rem;
+
+    }
+
+
+    .language-selector {
+
+        display: none;
+
+    }
+
+
+    .nav-actions {
+
+        gap: 2px;
+
+    }
+
+
+    .nav-icon,
+
+    .cart-button {
+
+        width: 36px;
+
+        height: 36px;
+
+    }
+
+
+    .page-hero {
+
+        min-height: 240px;
+
+    }
+
+
+    .page-hero h1 {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .page-hero p {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .contact-grid {
+
+        gap: 30px;
+
+    }
+
+
+    .wishlist-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .account-sidebar {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .site-footer .footer-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-bottom-links {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .size-guide-table {
+
+        min-width: 600px;
+
+    }
+
+
+    .size-guide-wrapper {
+
+        overflow-x: auto;
+
+    }
+
+
+    .search-overlay {
+
+        padding: 20px;
+
+    }
+
+
+    .search-container input {
+
+        min-height: 55px;
+
+        font-size: 1rem;
+
+    }
+
+}

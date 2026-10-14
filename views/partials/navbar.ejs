@@ -4,77 +4,126 @@
 
         <div class="container navbar-container">
 
-            <!-- Logo -->
+            <!-- =========================================
+                 STREETKICKS LOGO
+            ========================================== -->
             <a href="/" class="logo">
                 STREET<span>KICKS</span>
             </a>
 
-            <!-- Desktop Navigation -->
+
+            <!-- =========================================
+                 DESKTOP NAVIGATION
+            ========================================== -->
             <ul class="nav-links">
 
                 <li>
-                    <a href="/" data-i18n="home">Home</a>
+                    <a href="/" data-i18n="home">
+                        Home
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/shop" data-i18n="shop">Shop</a>
+                    <a href="/shop" data-i18n="shop">
+                        Shop
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/shop?category=new" data-i18n="newArrivals">
+                    <a
+                        href="/shop?category=new"
+                        data-i18n="newArrivals"
+                    >
                         New Arrivals
                     </a>
                 </li>
 
                 <li>
-                    <a href="/shop?category=collections" data-i18n="collections">
+                    <a
+                        href="/shop?category=collections"
+                        data-i18n="collections"
+                    >
                         Collections
                     </a>
                 </li>
 
                 <li>
-                    <a href="/shop?category=deals" data-i18n="deals">
+                    <a
+                        href="/shop?category=deals"
+                        data-i18n="deals"
+                    >
                         Deals
                     </a>
                 </li>
 
             </ul>
 
-            <!-- Right Navigation -->
+
+            <!-- =========================================
+                 RIGHT NAVIGATION
+            ========================================== -->
             <div class="nav-actions">
 
-                <!-- Search -->
+
+                <!-- SEARCH -->
                 <button
+                    type="button"
                     class="nav-icon"
                     id="searchButton"
                     aria-label="Search"
+                    title="Search"
                 >
                     <i data-lucide="search"></i>
                 </button>
 
-                <!-- Language -->
+
+                <!-- =====================================
+                     LANGUAGE SELECTOR
+                ====================================== -->
                 <div class="language-selector">
 
                     <button
+                        type="button"
                         class="language-button"
                         id="languageButton"
+                        aria-label="Select language"
+                        aria-expanded="false"
                     >
+
                         <i data-lucide="globe"></i>
-                        <span id="currentLanguage">EN</span>
+
+                        <span id="currentLanguage">
+                            EN
+                        </span>
+
                         <i data-lucide="chevron-down"></i>
+
                     </button>
 
-                    <div class="language-menu" id="languageMenu">
 
-                        <button data-language="en">
+                    <div
+                        class="language-menu"
+                        id="languageMenu"
+                    >
+
+                        <button
+                            type="button"
+                            data-language="en"
+                        >
                             🇬🇧 English
                         </button>
 
-                        <button data-language="sw">
+                        <button
+                            type="button"
+                            data-language="sw"
+                        >
                             🇰🇪 Kiswahili
                         </button>
 
-                        <button data-language="fr">
+                        <button
+                            type="button"
+                            data-language="fr"
+                        >
                             🇫🇷 Français
                         </button>
 
@@ -82,39 +131,79 @@
 
                 </div>
 
-                <!-- Theme -->
+
+                <!-- =====================================
+                     DARK / LIGHT MODE
+                ====================================== -->
                 <button
+                    type="button"
                     class="nav-icon theme-toggle"
                     id="themeToggle"
                     aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
                 >
                     <i data-lucide="moon"></i>
                 </button>
 
-                <!-- Wishlist -->
+
+                <!-- =====================================
+                     ACCOUNT
+                ====================================== -->
+                <a
+                    href="/account"
+                    class="nav-icon account-button"
+                    aria-label="My Account"
+                    title="My Account"
+                >
+                    <i data-lucide="user"></i>
+                </a>
+
+
+                <!-- =====================================
+                     WISHLIST
+                ====================================== -->
                 <a
                     href="/wishlist"
-                    class="nav-icon"
+                    class="nav-icon wishlist-button"
                     aria-label="Wishlist"
+                    title="Wishlist"
                 >
                     <i data-lucide="heart"></i>
                 </a>
 
-                <!-- Cart -->
+
+                <!-- =====================================
+                     CART
+                ====================================== -->
                 <a
                     href="/cart"
                     class="cart-button"
-                    aria-label="Shopping cart"
+                    aria-label="Shopping Cart"
+                    title="Shopping Cart"
                 >
+
                     <i data-lucide="shopping-bag"></i>
-                    <span class="cart-count">0</span>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
                 </a>
 
-                <!-- Mobile menu -->
+
+                <!-- =====================================
+                     MOBILE MENU BUTTON
+                ====================================== -->
                 <button
+                    type="button"
                     class="mobile-menu-button"
                     id="mobileMenuButton"
                     aria-label="Open menu"
+                    aria-expanded="false"
+                    title="Menu"
                 >
                     <i data-lucide="menu"></i>
                 </button>
@@ -125,19 +214,32 @@
 
     </nav>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
+
+    <!-- =============================================
+         SEARCH OVERLAY
+    ============================================== -->
+    <div
+        class="search-overlay"
+        id="searchOverlay"
+    >
 
         <div class="search-container">
 
             <button
+                type="button"
                 class="close-search"
                 id="closeSearch"
+                aria-label="Close search"
             >
                 <i data-lucide="x"></i>
             </button>
 
-            <form action="/shop" method="GET">
+
+            <form
+                action="/shop"
+                method="GET"
+                class="search-form"
+            >
 
                 <input
                     type="search"
@@ -145,9 +247,13 @@
                     placeholder="Search sneakers..."
                     data-i18n-placeholder="searchPlaceholder"
                     autocomplete="off"
+                    aria-label="Search sneakers"
                 >
 
-                <button type="submit">
+                <button
+                    type="submit"
+                    aria-label="Submit search"
+                >
                     <i data-lucide="search"></i>
                 </button>
 

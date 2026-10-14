@@ -1,73 +1,72 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   STREETKICKS DARK / LIGHT MODE
+========================================================= */
 
-    const themeToggle =
-        document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", function () {
 
-    const savedTheme =
-        localStorage.getItem("streetkicks-theme");
+    const themeToggle = document.getElementById("theme-toggle");
+
+    if (!themeToggle) {
+        console.log("STREETKICKS: Theme toggle button not found.");
+        return;
+    }
 
 
-    if (savedTheme) {
+    /* =====================================================
+       CHECK SAVED THEME
+    ===================================================== */
 
-        document.documentElement.setAttribute(
-            "data-theme",
-            savedTheme
-        );
+    const savedTheme = localStorage.getItem("streetkicks-theme");
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.textContent = "☀";
+
+    } else {
+
+        document.body.classList.remove("dark-mode");
+
+        themeToggle.textContent = "☾";
 
     }
 
 
-    function updateThemeIcon() {
+    /* =====================================================
+       TOGGLE THEME
+    ===================================================== */
 
-        if (!themeToggle) return;
+    themeToggle.addEventListener("click", function () {
 
-        const currentTheme =
-            document.documentElement.getAttribute("data-theme");
-
-        themeToggle.innerHTML =
-            currentTheme === "dark"
-                ? '<i data-lucide="sun"></i>'
-                : '<i data-lucide="moon"></i>';
-
-        if (typeof lucide !== "undefined") {
-            lucide.createIcons();
-        }
-
-    }
+        document.body.classList.toggle("dark-mode");
 
 
-    updateThemeIcon();
+        const darkMode =
+            document.body.classList.contains("dark-mode");
 
 
-    if (themeToggle) {
-
-        themeToggle.addEventListener("click", () => {
-
-            const currentTheme =
-                document.documentElement.getAttribute("data-theme");
-
-            const newTheme =
-                currentTheme === "dark"
-                    ? "light"
-                    : "dark";
-
-
-            document.documentElement.setAttribute(
-                "data-theme",
-                newTheme
-            );
-
+        if (darkMode) {
 
             localStorage.setItem(
                 "streetkicks-theme",
-                newTheme
+                "dark"
             );
 
+            themeToggle.textContent = "☀";
 
-            updateThemeIcon();
+        } else {
 
-        });
+            localStorage.setItem(
+                "streetkicks-theme",
+                "light"
+            );
 
-    }
+            themeToggle.textContent = "☾";
+
+        }
+
+    });
 
 });

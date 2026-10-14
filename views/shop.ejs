@@ -1,34 +1,167 @@
-<%- include("partials/head") %>
+<!DOCTYPE html>
+<html lang="en">
 
-<%- include("partials/navbar") %>
+<head>
 
-<%- include("partials/mobile-menu") %>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        <%= title || "Shop | STREETKICKS" %>
+    </title>
+
+    <meta
+        name="description"
+        content="Shop the latest STREETKICKS sneakers for men, women and kids."
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+
+</head>
 
 
-<main class="shop-page">
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
 
 
-    <!-- =====================================
-         SHOP HEADER
-    ====================================== -->
+            <!-- LOGO -->
 
-    <section class="shop-header">
+            <a
+                href="/"
+                class="logo"
+            >
+                STREETKICKS
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="main-nav">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a
+                    href="/shop"
+                    class="active"
+                >
+                    Shop
+                </a>
+
+                <a href="/shop?category=new">
+                    New Arrivals
+                </a>
+
+                <a href="/shop?category=collections">
+                    Collections
+                </a>
+
+                <a href="/shop?category=deals">
+                    Deals
+                </a>
+
+            </nav>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <a
+                    href="/shop"
+                    aria-label="Search"
+                    title="Search"
+                >
+                    🔍
+                </a>
+
+                <a
+                    href="/wishlist"
+                    aria-label="Wishlist"
+                    title="Wishlist"
+                >
+                    ♡
+                </a>
+
+                <a
+                    href="/account"
+                    aria-label="Account"
+                    title="My Account"
+                >
+                    👤
+                </a>
+
+                <a
+                    href="/cart"
+                    aria-label="Shopping Cart"
+                    title="Shopping Cart"
+                >
+                    🛒
+                </a>
+
+                <button
+                    type="button"
+                    id="theme-toggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SHOP HERO
+    ====================================================== -->
+
+    <section class="shop-hero">
 
         <div class="container">
 
-            <span class="section-label">
-                STREETKICKS COLLECTION
-            </span>
+            <div class="shop-hero-content">
 
-            <h1 data-i18n="shop">
-                SHOP
-            </h1>
+                <span class="eyebrow">
+                    STREETKICKS COLLECTION
+                </span>
 
-            <p>
-                Discover sneakers made for
-                every street, every move and
-                every style.
-            </p>
+                <h1>
+                    SHOP OUR<br>
+                    SNEAKERS
+                </h1>
+
+                <p>
+                    Discover sneakers built for every street,
+                    every move and every lifestyle.
+                </p>
+
+            </div>
 
         </div>
 
@@ -36,367 +169,548 @@
 
 
 
-    <!-- =====================================
+    <!-- =====================================================
          SHOP CONTENT
-    ====================================== -->
+    ====================================================== -->
 
-    <section class="shop-section">
+    <main class="shop-page">
 
-        <div class="container shop-layout">
-
-
-            <!-- =================================
-                 FILTER SIDEBAR
-            ================================== -->
-
-            <aside class="shop-sidebar">
-
-                <div class="filter-header">
-
-                    <h3>
-                        FILTER
-                    </h3>
-
-                </div>
+        <div class="container">
 
 
-                <!-- =================================
-                     CATEGORY FILTER
-                ================================== -->
+            <!-- =================================================
+                 SEARCH AND FILTER BAR
+            ================================================== -->
 
-                <div class="filter-group">
-
-                    <h4>
-                        CATEGORY
-                    </h4>
-
-                    <div class="filter-options">
+            <section class="shop-toolbar">
 
 
-                        <!-- ALL -->
+                <!-- SEARCH -->
 
-                        <a
-                            href="/shop?category=all"
-                            class="<%= category === 'all' ? 'active' : '' %>"
-                        >
-                            All Sneakers
-                        </a>
+                <form
+                    action="/shop"
+                    method="GET"
+                    class="shop-search"
+                >
 
-
-                        <!-- MEN -->
-
-                        <a
-                            href="/shop?category=men"
-                            class="<%= category === 'men' ? 'active' : '' %>"
-                        >
-                            Men
-                        </a>
-
-
-                        <!-- WOMEN -->
-
-                        <a
-                            href="/shop?category=women"
-                            class="<%= category === 'women' ? 'active' : '' %>"
-                        >
-                            Women
-                        </a>
-
-
-                        <!-- KIDS -->
-
-                        <a
-                            href="/shop?category=kids"
-                            class="<%= category === 'kids' ? 'active' : '' %>"
-                        >
-                            Kids
-                        </a>
-
-
-                        <!-- UNISEX -->
-
-                        <a
-                            href="/shop?category=unisex"
-                            class="<%= category === 'unisex' ? 'active' : '' %>"
-                        >
-                            Unisex
-                        </a>
-
-
-                        <!-- LIMITED -->
-
-                        <a
-                            href="/shop?category=limited"
-                            class="<%= category === 'limited' ? 'active' : '' %>"
-                        >
-                            Limited
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- =================================
-                     SEARCH
-                ================================== -->
-
-                <div class="filter-group">
-
-                    <h4>
-                        SEARCH
-                    </h4>
-
-                    <form
-                        action="/shop"
-                        method="GET"
-                        class="shop-search"
+                    <input
+                        type="text"
+                        name="search"
+                        value="<%= typeof search !== 'undefined' ? search : '' %>"
+                        placeholder="Search sneakers..."
+                        aria-label="Search sneakers"
                     >
 
-                        <!-- Keep selected category when searching -->
+                    <% if (typeof category !== 'undefined' && category && category !== 'all') { %>
+
+                        <input
+                            type="hidden"
+                            name="category"
+                            value="<%= category %>"
+                        >
+
+                    <% } %>
+
+                    <button
+                        type="submit"
+                        aria-label="Search"
+                    >
+                        SEARCH
+                    </button>
+
+                </form>
+
+
+
+                <!-- SORT -->
+
+                <form
+                    action="/shop"
+                    method="GET"
+                    class="shop-sort"
+                >
+
+                    <% if (typeof search !== 'undefined' && search) { %>
+
+                        <input
+                            type="hidden"
+                            name="search"
+                            value="<%= search %>"
+                        >
+
+                    <% } %>
+
+
+                    <% if (typeof category !== 'undefined' && category && category !== 'all') { %>
+
+                        <input
+                            type="hidden"
+                            name="category"
+                            value="<%= category %>"
+                        >
+
+                    <% } %>
+
+
+                    <label for="sort">
+                        SORT BY
+                    </label>
+
+                    <select
+                        id="sort"
+                        name="sort"
+                        onchange="this.form.submit()"
+                    >
+
+                        <option
+                            value=""
+                            <%= !sort ? "selected" : "" %>
+                        >
+                            Featured
+                        </option>
+
+                        <option
+                            value="price-low"
+                            <%= sort === "price-low" ? "selected" : "" %>
+                        >
+                            Price: Low to High
+                        </option>
+
+                        <option
+                            value="price-high"
+                            <%= sort === "price-high" ? "selected" : "" %>
+                        >
+                            Price: High to Low
+                        </option>
+
+                    </select>
+
+                </form>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CATEGORY NAVIGATION
+            ================================================== -->
+
+            <section class="shop-categories">
+
+                <div class="category-heading">
+
+                    <span>
+                        SHOP BY CATEGORY
+                    </span>
+
+                </div>
+
+
+                <div class="category-links">
+
+                    <a
+                        href="/shop"
+                        class="<%= !category || category === 'all' ? 'active' : '' %>"
+                    >
+                        ALL
+                    </a>
+
+
+                    <a
+                        href="/shop?category=Men"
+                        class="<%= category === 'Men' ? 'active' : '' %>"
+                    >
+                        MEN
+                    </a>
+
+
+                    <a
+                        href="/shop?category=Women"
+                        class="<%= category === 'Women' ? 'active' : '' %>"
+                    >
+                        WOMEN
+                    </a>
+
+
+                    <a
+                        href="/shop?category=Kids"
+                        class="<%= category === 'Kids' ? 'active' : '' %>"
+                    >
+                        KIDS
+                    </a>
+
+
+                    <a
+                        href="/shop?category=limited"
+                        class="<%= category === 'limited' ? 'active' : '' %>"
+                    >
+                        LIMITED
+                    </a>
+
+
+                    <a
+                        href="/shop?category=new"
+                        class="<%= category === 'new' ? 'active' : '' %>"
+                    >
+                        NEW ARRIVALS
+                    </a>
+
+
+                    <a
+                        href="/shop?category=deals"
+                        class="<%= category === 'deals' ? 'active' : '' %>"
+                    >
+                        DEALS
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RESULTS HEADER
+            ================================================== -->
+
+            <section class="products-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        STREETKICKS
+                    </span>
+
+                    <h2>
 
                         <% if (category && category !== "all") { %>
 
-                            <input
-                                type="hidden"
-                                name="category"
-                                value="<%= category %>"
-                            >
+                            <%= category %> SNEAKERS
+
+                        <% } else if (search) { %>
+
+                            SEARCH RESULTS
+
+                        <% } else { %>
+
+                            ALL SNEAKERS
 
                         <% } %>
 
-
-                        <input
-                            type="search"
-                            name="search"
-                            value="<%= search %>"
-                            placeholder="Search sneakers..."
-                            autocomplete="off"
-                        >
-
-
-                        <button
-                            type="submit"
-                            aria-label="Search"
-                        >
-
-                            <i data-lucide="search"></i>
-
-                        </button>
-
-                    </form>
+                    </h2>
 
                 </div>
 
 
+                <div class="results-count">
 
-                <!-- =================================
-                     CLEAR FILTERS
-                ================================== -->
+                    <%= products ? products.length : 0 %>
+                    PRODUCTS
 
-                <a
-                    href="/shop"
-                    class="clear-filters"
-                >
-                    CLEAR FILTERS
-                </a>
+                </div>
 
-            </aside>
+            </section>
 
 
 
-            <!-- =================================
-                 PRODUCTS AREA
-            ================================== -->
+            <!-- =================================================
+                 SEARCH RESULT MESSAGE
+            ================================================== -->
 
-            <div class="shop-products">
+            <% if (search) { %>
+
+                <div class="search-message">
+
+                    <p>
+
+                        Showing results for:
+                        <strong>
+                            "<%= search %>"
+                        </strong>
+
+                    </p>
+
+                    <a href="/shop">
+                        Clear Search
+                    </a>
+
+                </div>
+
+            <% } %>
 
 
-                <!-- =================================
-                     PRODUCTS HEADER
-                ================================== -->
 
-                <div class="shop-products-header">
+            <!-- =================================================
+                 PRODUCTS
+            ================================================== -->
 
-                    <div>
-
-                        <span class="product-count">
-
-                            <%= products.length %>
-
-                            <span>
-                                <%= products.length === 1 ? "product" : "products" %>
-                            </span>
-
-                        </span>
+            <% if (products && products.length > 0) { %>
 
 
-                        <!-- Current category -->
+                <section class="products-grid">
 
-                        <% if (category && category !== "all") { %>
 
-                            <span class="current-filter">
+                    <% products.forEach(product => { %>
 
-                                <% if (category === "limited") { %>
+                        <article class="product-card">
 
-                                    Limited Edition
 
-                                <% } else { %>
+                            <!-- PRODUCT IMAGE -->
 
-                                    <%= category.charAt(0).toUpperCase() + category.slice(1) %>
+                            <div class="product-image-container">
+
+
+                                <% if (product.badge) { %>
+
+                                    <span class="product-badge">
+
+                                        <%= product.badge %>
+
+                                    </span>
 
                                 <% } %>
 
-                            </span>
 
-                        <% } %>
+                                <a
+                                    href="/products/<%= product.id %>"
+                                    class="product-image-link"
+                                >
+
+                                    <img
+                                        src="<%= product.image %>"
+                                        alt="<%= product.name %>"
+                                        class="product-image"
+                                        loading="lazy"
+                                    >
+
+                                </a>
 
 
-                        <!-- Current search -->
+                                <!-- QUICK ACTION -->
 
-                        <% if (search) { %>
+                                <button
+                                    type="button"
+                                    class="wishlist-button"
+                                    data-product-id="<%= product.id %>"
+                                    aria-label="Add <%= product.name %> to wishlist"
+                                    title="Add to wishlist"
+                                >
+                                    ♡
+                                </button>
 
-                            <span class="current-filter">
 
-                                Search: "<%= search %>"
+                            </div>
 
-                            </span>
 
-                        <% } %>
 
+                            <!-- PRODUCT INFORMATION -->
+
+                            <div class="product-info">
+
+
+                                <div class="product-category">
+
+                                    <%= product.category %>
+
+                                </div>
+
+
+                                <h3 class="product-name">
+
+                                    <a
+                                        href="/products/<%= product.id %>"
+                                    >
+
+                                        <%= product.name %>
+
+                                    </a>
+
+                                </h3>
+
+
+
+                                <!-- REVIEWS -->
+
+                                <div class="product-rating">
+
+                                    <span class="stars">
+                                        ★★★★★
+                                    </span>
+
+                                    <span class="review-count">
+
+                                        (<%= product.reviews || 0 %>)
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <!-- PRICE -->
+
+                                <div class="product-price">
+
+
+                                    <span class="current-price">
+
+                                        KSh
+                                        <%= Number(product.price).toLocaleString() %>
+
+                                    </span>
+
+
+                                    <% if (product.oldPrice) { %>
+
+                                        <span class="old-price">
+
+                                            KSh
+                                            <%= Number(product.oldPrice).toLocaleString() %>
+
+                                        </span>
+
+                                    <% } %>
+
+
+                                </div>
+
+
+
+                                <!-- SIZES -->
+
+                                <% if (product.sizes && product.sizes.length > 0) { %>
+
+                                    <div class="product-sizes">
+
+                                        <span>
+                                            Sizes:
+                                        </span>
+
+                                        <% product.sizes.slice(0, 5).forEach(size => { %>
+
+                                            <span class="size">
+                                                <%= size %>
+                                            </span>
+
+                                        <% }) %>
+
+                                    </div>
+
+                                <% } %>
+
+
+
+                                <!-- VIEW PRODUCT -->
+
+                                <a
+                                    href="/products/<%= product.id %>"
+                                    class="product-button"
+                                >
+                                    VIEW PRODUCT
+                                </a>
+
+
+                            </div>
+
+
+                        </article>
+
+                    <% }) %>
+
+
+                </section>
+
+
+            <% } else { %>
+
+
+                <!-- =================================================
+                     NO PRODUCTS
+                ================================================== -->
+
+                <section class="no-products">
+
+                    <div class="no-products-icon">
+                        👟
                     </div>
 
+                    <h2>
+                        NO SNEAKERS FOUND
+                    </h2>
+
+                    <p>
+                        We couldn't find any sneakers matching
+                        your search or selected category.
+                    </p>
+
+                    <a
+                        href="/shop"
+                        class="product-button"
+                    >
+                        VIEW ALL SNEAKERS
+                    </a>
+
+                </section>
 
 
-                    <!-- =================================
-                         SORT
-                    ================================== -->
+            <% } %>
 
-                    <div class="sort-container">
 
-                        <label for="sort">
-                            Sort:
-                        </label>
+        </div>
 
-                        <select
-                            id="sort"
-                            onchange="sortProducts(this.value)"
-                        >
+    </main>
 
-                            <option
-                                value=""
-                                <%= !sort ? "selected" : "" %>
-                            >
-                                Featured
-                            </option>
 
-                            <option
-                                value="price-low"
-                                <%= sort === "price-low" ? "selected" : "" %>
-                            >
-                                Price: Low to High
-                            </option>
 
-                            <option
-                                value="price-high"
-                                <%= sort === "price-high" ? "selected" : "" %>
-                            >
-                                Price: High to Low
-                            </option>
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
 
-                            <option
-                                value="name"
-                                <%= sort === "name" ? "selected" : "" %>
-                            >
-                                Name
-                            </option>
+    <section class="newsletter-section">
 
-                        </select>
+        <div class="container">
 
-                    </div>
+            <div class="newsletter-content">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        STAY IN THE LOOP
+                    </span>
+
+                    <h2>
+                        GET THE LATEST KICKS
+                    </h2>
+
+                    <p>
+                        Sign up for new arrivals,
+                        exclusive releases and special offers.
+                    </p>
 
                 </div>
 
 
+                <form
+                    action="#"
+                    method="POST"
+                    class="newsletter-form"
+                    onsubmit="return false;"
+                >
 
-                <!-- =================================
-                     PRODUCT GRID
-                ================================== -->
+                    <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        aria-label="Email address"
+                        required
+                    >
 
-                <% if (products && products.length > 0) { %>
+                    <button type="submit">
+                        SUBSCRIBE
+                    </button>
 
-
-                    <div class="product-grid shop-product-grid">
-
-                        <% products.forEach(product => { %>
-
-                            <%- include(
-                                "partials/product-card",
-                                {
-                                    product: product
-                                }
-                            ) %>
-
-                        <% }) %>
-
-                    </div>
-
-
-                <% } else { %>
-
-
-                    <!-- =================================
-                         NO PRODUCTS
-                    ================================== -->
-
-                    <div class="no-products">
-
-                        <div class="no-products-icon">
-
-                            <i data-lucide="search-x"></i>
-
-                        </div>
-
-
-                        <h2>
-                            No sneakers found
-                        </h2>
-
-
-                        <p>
-
-                            <% if (category && category !== "all") { %>
-
-                                There are currently no
-                                sneakers in this category.
-
-                            <% } else if (search) { %>
-
-                                We couldn't find any
-                                sneakers matching your search.
-
-                            <% } else { %>
-
-                                Try another search or
-                                browse all our sneakers.
-
-                            <% } %>
-
-                        </p>
-
-
-                        <a
-                            href="/shop"
-                            class="btn btn-primary"
-                        >
-                            VIEW ALL SNEAKERS
-                        </a>
-
-                    </div>
-
-
-                <% } %>
+                </form>
 
 
             </div>
@@ -405,95 +719,294 @@
 
     </section>
 
-</main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <!-- =================================================
+                     BRAND
+                ================================================== -->
+
+                <div class="footer-brand">
+
+
+                    <a
+                        href="/"
+                        class="logo"
+                    >
+                        STREETKICKS
+                    </a>
+
+
+                    <p>
+                        Step into your style.
+                        Premium sneakers for every street,
+                        every move and every lifestyle.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a
+                            href="javascript:void(0);"
+                            aria-label="Instagram"
+                            title="Instagram"
+                        >
+                            IG
+                        </a>
+
+                        <a
+                            href="javascript:void(0);"
+                            aria-label="Facebook"
+                            title="Facebook"
+                        >
+                            FB
+                        </a>
+
+                        <a
+                            href="javascript:void(0);"
+                            aria-label="TikTok"
+                            title="TikTok"
+                        >
+                            TK
+                        </a>
+
+                    </div>
+
+
+                </div>
 
 
 
-<!-- =========================================
-     NEWSLETTER
-========================================== -->
+                <!-- =================================================
+                     SHOP
+                ================================================== -->
 
-<%- include("partials/newsletter") %>
+                <div class="footer-column">
 
+                    <h3>
+                        SHOP
+                    </h3>
 
+                    <ul>
 
-<!-- =========================================
-     FOOTER
-========================================== -->
+                        <li>
+                            <a href="/shop">
+                                All Sneakers
+                            </a>
+                        </li>
 
-<%- include("partials/footer") %>
+                        <li>
+                            <a href="/shop?category=Men">
+                                Men
+                            </a>
+                        </li>
 
+                        <li>
+                            <a href="/shop?category=Women">
+                                Women
+                            </a>
+                        </li>
 
+                        <li>
+                            <a href="/shop?category=Kids">
+                                Kids
+                            </a>
+                        </li>
 
-<!-- =========================================
-     JAVASCRIPT
-========================================== -->
+                        <li>
+                            <a href="/shop?category=new">
+                                New Arrivals
+                            </a>
+                        </li>
 
-<script src="/js/main.js"></script>
+                        <li>
+                            <a href="/shop?category=deals">
+                                Deals
+                            </a>
+                        </li>
 
-<script src="/js/theme.js"></script>
+                        <li>
+                            <a href="/shop?category=limited">
+                                Limited
+                            </a>
+                        </li>
 
-<script src="/js/language.js"></script>
+                    </ul>
 
-<script src="/js/cart.js"></script>
-
-<script src="/js/wishlist.js"></script>
-
-<script src="/js/products.js"></script>
-
-
-
-<script>
-
-    /*
-     * SORT PRODUCTS
-     *
-     * Keeps the current category and
-     * search query when sorting.
-     */
-
-    function sortProducts(value) {
-
-        const url =
-            new URL(window.location.href);
-
-
-        if (value) {
-
-            url.searchParams.set(
-                "sort",
-                value
-            );
-
-        } else {
-
-            url.searchParams.delete(
-                "sort"
-            );
-
-        }
+                </div>
 
 
-        window.location.href =
-            url.toString();
 
-    }
+                <!-- =================================================
+                     INFORMATION
+                ================================================== -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        INFORMATION
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="/about">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/contact">
+                                Contact Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/delivery">
+                                Delivery Information
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/returns">
+                                Returns & Exchange
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/size-guide">
+                                Size Guide
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/faq">
+                                FAQs
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
 
 
-    /*
-     * CREATE LUCIDE ICONS
-     */
 
-    if (
-        typeof lucide !== "undefined"
-    ) {
+                <!-- =================================================
+                     ACCOUNT
+                ================================================== -->
 
-        lucide.createIcons();
+                <div class="footer-column">
 
-    }
+                    <h3>
+                        ACCOUNT
+                    </h3>
 
-</script>
+                    <ul>
+
+                        <li>
+                            <a href="/account">
+                                My Account
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/account/orders">
+                                My Orders
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/wishlist">
+                                Wishlist
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/cart">
+                                Shopping Cart
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/checkout">
+                                Checkout
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FOOTER BOTTOM
+            ================================================== -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; <%= new Date().getFullYear() %>
+                    STREETKICKS.
+                    All Rights Reserved.
+                </p>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="/faq">
+                        FAQs
+                    </a>
+
+                    <a href="/delivery">
+                        Delivery
+                    </a>
+
+                    <a href="/returns">
+                        Returns
+                    </a>
+
+                    <a href="/contact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="/js/theme.js"></script>
+
+    <script src="/js/main.js"></script>
+
+    <script src="/js/products.js"></script>
+
+    <script src="/js/cart.js"></script>
 
 
 </body>
+
 </html>

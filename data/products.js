@@ -98,15 +98,15 @@ const products = [
     // KIDS
     // =========================
 
-    {
-        id: 8,
-        name: "Street Classic",
-        category: "Kids",
-        price: 5500,
-        image: "/images/sneakers/sneaker-8.jpg",
-        reviews: 12,
-        sizes: [32, 33, 34, 35, 36]
-    }
+{
+    id: 8,
+    name: "Street Classic",
+    category: "Kids",
+    price: 5500,
+    image: "/images/sneakers/sneaker-8.jpg",
+    reviews: 12,
+    sizes: [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+}
 
 ];
 

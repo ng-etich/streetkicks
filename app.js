@@ -3,6 +3,7 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -46,43 +47,100 @@ app.use(
 // ROUTES
 // ==========================================
 
+// Home
 const indexRoutes =
     require("./routes/index");
 
+// Shop
 const shopRoutes =
     require("./routes/shop");
 
+// Products
 const productRoutes =
     require("./routes/products");
+
+// Cart
 const cartRoutes =
-    require("./routes/cart");    
+    require("./routes/cart");
+
+// Checkout
 const checkoutRoutes =
     require("./routes/checkout");
 
+// General pages
+const pagesRoutes =
+    require("./routes/pages");
+
+// Account
+const accountRoutes =
+    require("./routes/account");
+
+
+// ==========================================
+// ROUTE MOUNTING
+// ==========================================
+
+// Home
 app.use(
     "/",
     indexRoutes
 );
 
+
+// Shop
 app.use(
     "/shop",
     shopRoutes
 );
 
+
+// Products
 app.use(
     "/products",
     productRoutes
 );
+
+
+// Cart
 app.use(
     "/cart",
     cartRoutes
 );
+
+
+// Checkout
 app.use(
     "/checkout",
     checkoutRoutes
 );
+
+
+// General pages
+// /about
+// /contact
+// /delivery
+// /returns
+// /size-guide
+// /faq
+// /wishlist
+app.use(
+    "/",
+    pagesRoutes
+);
+
+
+// Account
+// /account
+// /account/orders
+// /account/order-details
+app.use(
+    "/account",
+    accountRoutes
+);
+
+
 // ==========================================
-// 404
+// 404 - PAGE NOT FOUND
 // ==========================================
 
 app.use((req, res) => {
